@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: create-daily-todo-cron-job
+spec:
+  schedule: "* 8 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: todo-generator-script
+              image: curlimages/curl:latest
+              command: [ "/bin/sh", "/etc/config/scripts/create-daily-todo.sh" ]
+              env:
+                - name: SERVER_URL
+                  value: http://prod-server-svc:80
+              volumeMounts:
+                - name: todo-script
+                  mountPath: /etc/config/scripts
+                  readOnly: true
+          restartPolicy: OnFailure
+          volumes:
+            - name: todo-script
+              configMap:
+                name: config-map-variables
+                items:
+                  - key: create-daily-todo.sh
+                    path: create-daily-todo.sh

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: broadcaster-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broadcaster
+  template:
+    metadata:
+      labels:
+        app: broadcaster
+    spec:
+      containers:
+        - name: broadcaster
+          image: BROADCASTER/IMAGE
+          imagePullPolicy: Always
+          env:
+            - name: NATS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: config-map-variables
+                  key: nats-url
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '250m'
+            limits:
+              memory: '516Mi'
+              cpu: '500m'

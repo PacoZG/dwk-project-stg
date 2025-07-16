@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+    min-height: 100vh;
+    background-color: burlywood;
+    /* opacity: .5; */
+}
+
+.create-todo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.todo-input {
+    font-size: 16px;
+    border: black solid 1px;
+    padding: 0.5rem;
+    width: 40rem;
+    height: 2rem;
+    outline: none;
+    box-shadow: none;
+}
+
+.create-button {
+    font-size: 16px;
+    border: black solid 1px;
+    padding: 0.5rem;
+    width: 8rem;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.TodoList {
+    padding: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.TodoList__header {
+    font-size: 48px;
+    font-style: oblique;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.TodoList__footer {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-width: 2px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 45rem;
+    border-radius: 20px;
+    border-color: darkcyan;
+}
+
+.done {
+    background-color: green;
+}
+
+.not-done {
+    background-color: red;
+    color: antiquewhite;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.status {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.done-button {
+    background-color: burlywood;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.empty-list {
+    color: firebrick;
+    margin-left: 30px;
+}

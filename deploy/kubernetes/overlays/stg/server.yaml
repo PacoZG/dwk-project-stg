@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-dep
+spec:
+  selector:
+    matchLabels:
+      app: server
+  template:
+    spec:
+      containers:
+        - name: server
+          env:
+            - name: POSTGRES_HOST
+              value: stg-postgres-svc
+      volumes:
+        - name: shared-files
+          persistentVolumeClaim:
+            claimName: stg-project-files-claim

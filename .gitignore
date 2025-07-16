@@ -1,0 +1,9 @@
+/.idea/
+/**/node_modules/
+/**/shared/
+/**/.env
+/**/database
+/**/*secret.yaml
+/**/*secrets.yaml
+/**/**/*key.json
+/**/**/db

@@ -1,0 +1,19 @@
+# Ignore artifacts:
+coverage
+node_modules
+
+# Ignore all HTML files:
+*.html
+*.json
+*.yml
+*.md
+*.css
+*.yaml
+
+# Ignore all Terraform files
+*.tf
+*.tfvars
+
+# Ignore initDb.js anywhere in the project
+/**/**/initDb.js
+/README.md
