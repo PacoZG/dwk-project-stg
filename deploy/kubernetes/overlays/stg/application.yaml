@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dwk-project-stg
-  namespace: staging
+  namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/PacoZG/devops-with-kubernetes-2025
+    repoURL: https://github.com/PacoZG/dwk-project-stg
     targetRevision: main
-    path: project/deploy/kubernetes/overlays/stg
+    path: deploy/kubernetes/overlays/stg
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
